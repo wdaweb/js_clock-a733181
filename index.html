@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js-clock</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <select name="" id="" class="timezone">
+        <option value="Asia/Taipei">台北</option>
+        <option value="Asia/Tokyo">東京</option>
+        <option value="Asia/Seoul">首爾</option>
+        <option value="America/New_York">紐約</option>
+        <option value="Europe/London">倫敦</option>
+        <option value="Australia/Sydney">雪梨</option>
+      </select>
+      <div class="clock">
+        <svg class="hours__circle">
+          <linearGradient
+            id="bluegradient"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+            spreadMethod="pad"
+          >
+            <stop offset="0%" stop-color="#0fccff" stop-opacity="1" />
+            <stop offset="80%" stop-color="#0fccff" stop-opacity="0.2" />
+          </linearGradient>
+          <linearGradient
+            id="whitegradient"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+            spreadMethod="pad"
+          >
+            <stop offset="0%" stop-color="#0aa5d7" stop-opacity="1" />
+            <stop offset="80%" stop-color="#0aa5d7" stop-opacity="0.2" />
+          </linearGradient>
+          <circle
+            cx="150"
+            cy="150"
+            r="135"
+            class="hours__circle--color"
+          ></circle>
+          <line
+            x1="300"
+            y1="150"
+            x2="290"
+            y2="150"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(30 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(60 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="290"
+            y2="150"
+            transform="rotate(90 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(120 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(150 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="290"
+            y2="150"
+            transform="rotate(180 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(210 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(240 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="290"
+            y2="150"
+            transform="rotate(270 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(300 150 150)"
+            class="hours__circle--line"
+          ></line>
+          <line
+            x1="300"
+            y1="150"
+            x2="295"
+            y2="150"
+            transform="rotate(330 150 150)"
+            class="hours__circle--line"
+          ></line>
+        </svg>
+        <span class="pointer hours"></span>
+        <span class="pointer minute"></span>
+        <span class="pointer second"></span>
+      </div>
+      <p class="weekday"></p>
+      <p class="time"></p>
+      <p class="ampm"></p>
+      <button class="change-mode">
+        <span class="change-mode--white">White</span>
+        <span class="change-mode--blue">Blue</span>
+      </button>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>

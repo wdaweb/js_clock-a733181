@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --c-hour: #00dbfe;
+  --c-min: white;
+  --c-sec: #0c7196;
+  --c-gradient-1: #005c83;
+  --c-gradient-2: #013c6a;
+  --c-time: #e2ffff;
+  --c-line: #2f97b6;
+  --c-weekday: #2895b2;
+  --c-ampm: #2c6d8e;
+}
+.white-mode {
+  --c-gradient-1: white;
+  --c-gradient-2: white;
+  --c-hour: #0aa5d7;
+  --c-min: #1bbec7;
+  --c-sec: #d5e0e3;
+  --c-time: #08364d;
+  --c-line: #cdd4d4;
+  --c-weekday: #90dee9;
+  --c-ampm: #becad1;
+}
+.container {
+  background-image: radial-gradient(var(--c-gradient-1), var(--c-gradient-2));
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.timezone {
+  margin-bottom: 20px;
+  padding: 3px 5px;
+  border-radius: 10px;
+}
+.pointer {
+  position: absolute;
+  top: 50%;
+  transform: rotate(90deg);
+  transition: 0.5s;
+}
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.hours__circle {
+  height: 100%;
+  transform: rotate(270deg);
+}
+.hours__circle--color {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 5;
+  stroke: url(#bluegradient);
+  stroke-dasharray: 848;
+  filter: drop-shadow(0 0 5px var(--c-hour));
+}
+.hours__circle--line {
+  stroke: var(--c-line);
+  stroke-width: 2;
+}
+.hours {
+  height: 5px;
+  width: 45%;
+  background: var(--c-hour);
+  transform-origin: right center;
+  left: 5%;
+  border-radius: 2px;
+  filter: drop-shadow(0 0 5px var(--c-hour));
+}
+.minute {
+  height: 4px;
+  width: 40%;
+  background: var(--c-min);
+  transform-origin: right center;
+  left: 10%;
+  border-radius: 2px;
+}
+.second {
+  height: 3px;
+  width: 50%;
+  background: var(--c-sec);
+  transform-origin: right center;
+  left: 0;
+  border-radius: 2px;
+}
+.weekday {
+  color: var(--c-weekday);
+  font-size: 40px;
+  margin-top: 20px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.time {
+  text-align: center;
+  color: var(--c-time);
+  font-size: 40px;
+  margin-bottom: 2px;
+}
+.ampm {
+  color: var(--c-ampm);
+  font-size: 30px;
+}
+.change-mode {
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 20px;
+  box-shadow: 0 0 10px var(--c-hour);
+  color: var(--c-gradient-1);
+  font-weight: bold;
+}
+.change-mode:hover {
+  background-color: var(--c-hour);
+}
+.change-mode:active {
+  position: relative;
+  top: 2px;
+}
+.change-mode--blue {
+  display: none;
+}
+.white-mode .hours__circle--color {
+  stroke: url(#whitegradient);
+}
+.white-mode .change-mode--white {
+  display: none;
+}
+.white-mode .change-mode--blue {
+  display: inline;
+  color: var(--c-min);
+}
+.white-mode .change-mode:hover .change-mode--blue {
+  color: var(--c-time);
+}
